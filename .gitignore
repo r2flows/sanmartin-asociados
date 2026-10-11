@@ -9,3 +9,6 @@
 # OS
 .DS_Store
 Thumbs.db
+
+# Fotos crudas recibidas por WhatsApp; las publicadas viven en public/img/
+originales/

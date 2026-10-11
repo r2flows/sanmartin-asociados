@@ -16,6 +16,10 @@ railway.json   builder DOCKERFILE
 El sitio es una sola página: HTML, CSS, JS y fuentes van inline. Lo único
 externo son las imágenes de `public/img/`.
 
+Las fotos llegan por WhatsApp con nombres genéricos; las crudas quedan en
+`originales/` (sin versionar) y cada una se guarda en `public/img/` con el
+nombre que el HTML espera.
+
 ## Desarrollo local
 
 ```bash
@@ -35,15 +39,6 @@ Railway AgentLoop: pasar siempre `--service` para no heredar ese enlace.
 
 ## Pendientes
 
-- [ ] **Faltan las imágenes.** El HTML referencia 17 archivos que no vinieron
-      con la entrega; van en `public/img/` con estos nombres:
-      `logo.png`, `montaje-altura.jpg`, `tablero-canalizacion.jpg`,
-      `rotiseria.jpg`, `sala-proceso.jpg`, `rampa.jpg`, `bandeja-highbay.jpg`,
-      `empalme-rural.jpg`, `estacionamiento.jpg`,
-      `iluminacion-sala-ventas.jpg`, `tablero-distribucion.jpg`,
-      `tableros-generales.jpg` y, en `clientes/`, `adventista-chillan.png`,
-      `alborada-temuco.png`, `vd.png`, `super-ganga.png`,
-      `banco-falabella.png`.
 - [ ] **El formulario de cotización no envía nada.** Valida y muestra un
       aviso de "vista previa"; hay que conectarlo a un backend.
 - [ ] Agregar `canonical`, `og:url` y `og:image` apuntando a

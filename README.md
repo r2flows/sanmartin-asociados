@@ -2,6 +2,8 @@
 
 Landing de San Martín & Asociados (proyectos eléctricos).
 
+**Producción:** https://sanmartin-asociados.cl (y `www`)
+
 ## Estructura
 
 ```
@@ -44,4 +46,5 @@ Railway AgentLoop: pasar siempre `--service` para no heredar ese enlace.
       `banco-falabella.png`.
 - [ ] **El formulario de cotización no envía nada.** Valida y muestra un
       aviso de "vista previa"; hay que conectarlo a un backend.
-- [ ] Dominio propio, y con él `canonical`, `og:url` y `og:image`.
+- [ ] Agregar `canonical`, `og:url` y `og:image` apuntando a
+      `sanmartin-asociados.cl`; el HTML de diseño no los trae.

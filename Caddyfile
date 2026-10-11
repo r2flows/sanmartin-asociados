@@ -1,0 +1,29 @@
+{
+	admin off
+	persist_config off
+	# El TLS lo termina el proxy de Railway; el contenedor sirve HTTP plano.
+	auto_https off
+}
+
+# Railway inyecta PORT en runtime. El default local permite `docker run` sin -e.
+:{$PORT:8080} {
+	root * /srv
+	encode zstd gzip
+	file_server
+
+	# Las imagenes tienen nombre estable y se reemplazan en el lugar: cache
+	# corta para que un cambio de foto se vea sin renombrar el archivo.
+	@images path *.png *.jpg *.webp *.svg *.ico
+	header @images Cache-Control "public, max-age=3600"
+	# Ojo: "/" y "/index.html" son rutas distintas para el matcher; sin las dos
+	# el landing servido en "/" sale sin Cache-Control y el navegador lo
+	# cachea por heuristica, mostrando una version vieja tras un redeploy.
+	@html path / /index.html
+	header @html Cache-Control "public, max-age=0, must-revalidate"
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+}

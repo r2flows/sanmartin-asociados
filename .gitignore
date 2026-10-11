@@ -1,0 +1,11 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Railway CLI local state
+.railway/
+
+# OS
+.DS_Store
+Thumbs.db
